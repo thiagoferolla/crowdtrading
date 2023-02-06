@@ -5,6 +5,7 @@ import {
   View,
   Text,
 } from "react-native";
+import styles from "./styles";
 
 interface ButtonProps {
   title: string;
@@ -20,24 +21,8 @@ export default function Button(props: ButtonProps) {
 
   return (
     <Touchable onPress={props.onPress}>
-      <View
-        style={{
-          paddingVertical: 16,
-          backgroundColor: "#770FDF",
-          borderRadius: 4,
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        <Text
-          style={{
-            fontSize: 16,
-            color: "#fff",
-            fontFamily: "Sora_500Medium",
-          }}
-        >
-          {props.title}
-        </Text>
+      <View style={styles.container}>
+        <Text style={styles.label}>{props.title}</Text>
       </View>
     </Touchable>
   );

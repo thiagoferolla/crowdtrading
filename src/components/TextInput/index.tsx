@@ -6,6 +6,7 @@ import {
   View,
   TouchableOpacity,
 } from "react-native";
+import styles from "./styles";
 
 interface TextInputProps {
   label: string;
@@ -20,38 +21,15 @@ export default function TextInput(props: TextInputProps) {
 
   return (
     <>
-      <Text
-        style={{
-          color: "#A0A0A0",
-          fontSize: 11,
-          fontFamily: "Sora_400Regular",
-        }}
-      >
-        {props.label}
-      </Text>
+      <Text style={styles.label}>{props.label}</Text>
 
-      <View
-        style={{
-          backgroundColor: "#F4F4F4",
-          borderRadius: 4,
-          marginTop: 5,
-          paddingHorizontal: 10,
-          flexDirection: "row",
-          alignItems: "center",
-        }}
-      >
+      <View style={styles.inputContainer}>
         <RNTextInput
           placeholder={props.placeholder}
           value={props.value}
           onChangeText={props.onValueChange}
           placeholderTextColor="#CFCFCF"
-          style={{
-            color: "#000000",
-            fontSize: 14,
-            fontFamily: "Sora_400Regular",
-            paddingVertical: 14,
-            flex: 1,
-          }}
+          style={styles.input}
           secureTextEntry={props.sensitive && textHidden}
         />
 
