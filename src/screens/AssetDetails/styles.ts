@@ -18,5 +18,6 @@ export default StyleSheet.create({
   buyButtonContainer: {
     marginTop: 30,
     marginHorizontal: 33,
+    marginBottom: 10,
   },
 });

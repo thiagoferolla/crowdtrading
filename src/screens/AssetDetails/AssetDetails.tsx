@@ -10,10 +10,9 @@ import Button from "../../components/Button";
 import AssetPrice from "../../components/AssetPrice";
 import FundStats from "../../components/FundStats";
 import Chart from "./Chart";
-import Breakdown from "./Breakdown";
-import Portfolio from "./Portfolio";
 import styles from "./styles";
 import PortfolioCredits from "../../components/PortfolioCredits";
+import FundBreakdown from "../../components/FundBreakdown";
 
 function AssetDetails() {
   const {
@@ -78,7 +77,7 @@ function AssetDetails() {
         ]}
       />
 
-      <Breakdown />
+      <FundBreakdown />
 
       <PortfolioCredits
         percentage="8.41%"
