@@ -2,6 +2,7 @@ import { StyleSheet } from "react-native";
 
 export default StyleSheet.create({
   priceNoteContainer: {
+    marginTop: 40,
     marginHorizontal: 20,
     backgroundColor: "#F4F4F4",
     padding: 10,

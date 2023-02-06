@@ -8,6 +8,13 @@ export default StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
+
+  outlineContainer: {
+    borderWidth: 1,
+    borderColor: "#CFCFCF",
+    backgroundColor: "rgba(255,255,255,0)"
+  },
+
   label: {
     fontSize: 16,
     color: "#fff",

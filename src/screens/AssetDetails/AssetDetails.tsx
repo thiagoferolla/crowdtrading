@@ -13,6 +13,7 @@ import Chart from "./Chart";
 import Breakdown from "./Breakdown";
 import Portfolio from "./Portfolio";
 import styles from "./styles";
+import PortfolioCredits from "../../components/PortfolioCredits";
 
 function AssetDetails() {
   const {
@@ -79,7 +80,14 @@ function AssetDetails() {
 
       <Breakdown />
 
-      <Portfolio />
+      <PortfolioCredits
+        percentage="8.41%"
+        percentageDirection="up"
+        daysSinceLastPurchase={28}
+        credits={18}
+        totalValue="$328.14"
+        retiredCredits={28}
+      />
 
       <View style={styles.priceNoteContainer}>
         <Text style={styles.priceNote}>
