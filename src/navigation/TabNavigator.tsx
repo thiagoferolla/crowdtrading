@@ -7,7 +7,11 @@ const BottomTabNavigator = createBottomTabNavigator();
 export default function TabNavigator() {
   return (
     <BottomTabNavigator.Navigator>
-      <BottomTabNavigator.Screen name="Home" component={Home} />
+      <BottomTabNavigator.Screen
+        name="Home"
+        component={Home}
+        options={{ headerShown: false }}
+      />
       <BottomTabNavigator.Screen name="Trade" component={PlaceholderScreen} />
       <BottomTabNavigator.Screen
         name="Portfolio"

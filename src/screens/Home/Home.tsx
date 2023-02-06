@@ -1,5 +1,6 @@
 import React from "react";
 import { ScrollView, View } from "react-native";
+import HomeHeader from "../../components/HomeHeader";
 import PortfolioBalance from "../../components/PortfolioBalance";
 import CarbonCreditTipCard from "../../components/TipCard";
 import FundList from "./FundList";
@@ -12,7 +13,7 @@ function Home() {
         backgroundColor: "#ffffff",
       }}
     >
-      <PortfolioBalance />
+      <HomeHeader />
 
       <View style={{ marginTop: 20 }}>
         <FundList />

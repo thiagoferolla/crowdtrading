@@ -10,7 +10,7 @@ export default function PortfolioBalance() {
         paddingBottom: 30,
         paddingHorizontal: 20,
         paddingTop: 16,
-        borderWidth: 1,
+        borderBottomWidth: 1,
         borderColor: "#F4F4F4",
         alignItems: "flex-end",
       }}
