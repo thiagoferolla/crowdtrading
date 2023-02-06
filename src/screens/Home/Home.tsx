@@ -14,13 +14,17 @@ function Home() {
     >
       <PortfolioBalance />
 
-      <FundList />
+      <View style={{ marginTop: 20 }}>
+        <FundList />
+      </View>
 
       <View style={{ paddingHorizontal: 20 }}>
         <CarbonCreditTipCard />
       </View>
 
-      <HintList />
+      <View style={{ marginTop: 20 }}>
+        <HintList />
+      </View>
     </ScrollView>
   );
 }
