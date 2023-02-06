@@ -1,7 +1,7 @@
 import React from "react";
-import { ScrollView } from "react-native";
+import { ScrollView, View } from "react-native";
+import PortfolioBalance from "../../components/PortfolioBalance";
 import CarbonCreditTipCard from "../../components/TipCard";
-import Balance from "./Balance";
 import FundList from "./FundList";
 import HintList from "./HintList";
 
@@ -9,14 +9,16 @@ function Home() {
   return (
     <ScrollView
       style={{
-        paddingHorizontal: 20,
+        backgroundColor: "#ffffff",
       }}
     >
-      <Balance />
+      <PortfolioBalance />
 
       <FundList />
 
-      <CarbonCreditTipCard />
+      <View style={{ paddingHorizontal: 20 }}>
+        <CarbonCreditTipCard />
+      </View>
 
       <HintList />
     </ScrollView>
