@@ -3,6 +3,7 @@ import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { MainNavigatorScreens } from "../../navigation/types";
 import { TouchableOpacity, View } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
+import styles from "./styles";
 
 export default function CustomSignUpHeaderOptions({
   navigation,
@@ -18,39 +19,24 @@ export default function CustomSignUpHeaderOptions({
       </TouchableOpacity>
     ),
     headerTitle: () => (
-      <View
-        style={{
-          flexDirection: "row",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
+      <View style={styles.headerBarProgressMainContainer}>
         <View
-          style={{
-            marginRight: 5,
-            borderRadius: 99,
-            backgroundColor: "#F4F4F4",
-            height: 5,
-            width: 50,
-          }}
+          style={[
+            styles.headerBarProgress,
+            {
+              marginRight: 5,
+            },
+          ]}
         />
         <View
-          style={{
-            marginRight: 5,
-            borderRadius: 99,
-            backgroundColor: "#F4F4F4",
-            height: 5,
-            width: 50,
-          }}
+          style={[
+            styles.headerBarProgress,
+            {
+              marginRight: 5,
+            },
+          ]}
         />
-        <View
-          style={{
-            borderRadius: 99,
-            backgroundColor: "#F4F4F4",
-            height: 5,
-            width: 50,
-          }}
-        />
+        <View style={styles.headerBarProgress} />
       </View>
     ),
   };
