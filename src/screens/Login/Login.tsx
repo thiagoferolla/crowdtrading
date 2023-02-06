@@ -1,13 +1,18 @@
 import { NavigationProp, useNavigation } from "@react-navigation/native";
-import { View, Text, TextInput, TouchableWithoutFeedback } from "react-native";
+import { useState } from "react";
+import { View, Text, TouchableWithoutFeedback, ScrollView } from "react-native";
 import Button from "../../components/Button";
+import TextInput from "../../components/TextInput";
 import { MainNavigatorScreens } from "../../navigation/types";
 
 function Login() {
   const navigation = useNavigation<NavigationProp<MainNavigatorScreens>>();
 
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
   return (
-    <View
+    <ScrollView
       style={{
         backgroundColor: "#fff",
         flex: 1,
@@ -26,8 +31,22 @@ function Login() {
           Login
         </Text>
 
-        <TextInput placeholder="john@doe.com" />
-        <TextInput placeholder="Minimum 8 characters" />
+        <TextInput
+          label="Email"
+          placeholder="john@doe.com"
+          value={email}
+          onValueChange={setEmail}
+        />
+
+        <View style={{ marginTop: 20, marginBottom: 37 }}>
+          <TextInput
+            label="Password"
+            placeholder="Minimum 8 characters"
+            value={password}
+            onValueChange={setPassword}
+            sensitive
+          />
+        </View>
 
         <Button
           title="Login"
@@ -49,7 +68,7 @@ function Login() {
           </Text>
         </TouchableWithoutFeedback>
       </View>
-    </View>
+    </ScrollView>
   );
 }
 

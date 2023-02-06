@@ -13,11 +13,15 @@ export default function MainNavigator() {
   return (
     <NavigationContainer>
       <Navigator.Navigator>
-        <Navigator.Screen name="Login" component={Login} />
+        <Navigator.Screen
+          name="Login"
+          component={Login}
+          options={{ headerTitle: "" }}
+        />
         <Navigator.Screen name="SignUp" component={SignUp} />
         <Navigator.Screen name="TabNavigator" component={TabNavigator} />
         <Navigator.Screen name="AssetDetails" component={AssetDetails} />
       </Navigator.Navigator>
     </NavigationContainer>
-  )
+  );
 }
