@@ -1,8 +1,26 @@
 import React from "react";
-import { Text } from "react-native";
+import { ScrollView } from "react-native";
+import CarbonCreditTipCard from "../../components/TipCard";
+import Balance from "./Balance";
+import FundList from "./FundList";
+import HintList from "./HintList";
 
 function Home() {
-  return <Text>Home Screen</Text>;
+  return (
+    <ScrollView
+      style={{
+        paddingHorizontal: 20,
+      }}
+    >
+      <Balance />
+
+      <FundList />
+
+      <CarbonCreditTipCard />
+
+      <HintList />
+    </ScrollView>
+  );
 }
 
 export default Home;

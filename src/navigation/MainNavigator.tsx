@@ -25,7 +25,11 @@ export default function MainNavigator() {
           component={SignUp}
           options={(props) => CustomSignUpHeaderOptions(props)}
         />
-        <Navigator.Screen name="TabNavigator" component={TabNavigator} />
+        <Navigator.Screen
+          name="TabNavigator"
+          component={TabNavigator}
+          options={{ headerShown: false }}
+        />
         <Navigator.Screen name="AssetDetails" component={AssetDetails} />
       </Navigator.Navigator>
     </NavigationContainer>
