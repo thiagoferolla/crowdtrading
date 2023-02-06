@@ -1,6 +1,13 @@
 import { StyleSheet } from "react-native";
 
 export default StyleSheet.create({
+  fundsListTitle: {
+    marginBottom: 20,
+    fontFamily: "Sora_600SemiBold",
+    fontSize: 18,
+    marginLeft: 20,
+  },
+
   hintListContainer: {
     flexDirection: "row",
     flexWrap: "wrap",

@@ -2,7 +2,7 @@ export type MainNavigatorScreens = {
   Login: undefined;
   SignUp: undefined;
   TabNavigator: undefined;
-  AssetDetails: { asset: string };
+  AssetDetails: { code: string };
 };
 
 export type TabNavigatorScreens = {

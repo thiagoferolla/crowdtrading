@@ -18,7 +18,7 @@ function Home() {
         <FundList />
       </View>
 
-      <View style={{ paddingHorizontal: 20 }}>
+      <View style={{ paddingHorizontal: 20, marginTop: 20 }}>
         <CarbonCreditTipCard />
       </View>
 
