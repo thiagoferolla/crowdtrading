@@ -49,4 +49,12 @@ export default StyleSheet.create({
     color: "#808080",
     fontFamily: "Sora_400Regular",
   },
+
+  headerContainer: { flexDirection: "row", backgroundColor: "#fff" },
+
+  headerBackButtonContainer: {
+    width: 60,
+    paddingLeft: 20,
+    justifyContent: "center",
+  },
 });

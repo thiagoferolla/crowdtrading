@@ -9,6 +9,7 @@ import CustomSignUpHeaderOptions from "../screens/SignUp/Header";
 
 import { useSelector } from "react-redux";
 import { RootState } from "../store/configure";
+import CustomLoginOptions from "../screens/Login/Header";
 
 const Navigator = createNativeStackNavigator<MainNavigatorScreens>();
 
@@ -23,7 +24,7 @@ export default function MainNavigator() {
             <Navigator.Screen
               name="Login"
               component={Login}
-              options={{ headerTitle: "" }}
+              options={CustomLoginOptions}
             />
             <Navigator.Screen
               name="SignUp"

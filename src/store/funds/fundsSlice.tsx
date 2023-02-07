@@ -1,13 +1,9 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import React from "react";
-import NaturalIcon from "./mock_icons/natural";
-import SolarIcon from "./mock_icons/solar";
-import WindIcon from "./mock_icons/wind";
 
 type FundSlice = {
   funds: {
     code: string;
-    icon: React.ReactNode;
+    icon: string;
     name: string;
     value: number;
     changePercentage: number;
@@ -226,7 +222,7 @@ const initialState: FundSlice = {
     {
       name: "Wind Fund",
       code: "WIND",
-      icon: <WindIcon />,
+      icon: "wind",
       value: 1234.23,
       changePercentage: 31.82,
       changeValue: 123.23,
@@ -236,7 +232,7 @@ const initialState: FundSlice = {
     {
       name: "Solar Fund",
       code: "SOLL",
-      icon: <SolarIcon />,
+      icon: "solar",
       value: 986.61,
       changePercentage: -12.82,
       changeValue: -85.23,
@@ -246,7 +242,7 @@ const initialState: FundSlice = {
     {
       name: "Natural Fund",
       code: "NATU",
-      icon: <NaturalIcon />,
+      icon: "natural",
       value: 1122.23,
       changePercentage: 21.82,
       changeValue: 123.23,

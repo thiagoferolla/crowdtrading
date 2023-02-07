@@ -43,12 +43,26 @@ export default StyleSheet.create({
     color: "#A0A0A0",
   },
 
+  headerContainer: {
+    flexDirection: "row",
+    backgroundColor: "#fff",
+    borderBottomWidth: 1,
+    borderBottomColor: "#F4F4F4",
+    paddingBottom: 20,
+  },
+
+  headerBackButtonContainer: {
+    width: 60,
+    paddingLeft: 20,
+    justifyContent: "center",
+  },
+
   headerBarProgressMainContainer: {
     flexDirection: "row",
-          alignItems: "center",
-          justifyContent: "center",
+    alignItems: "center",
+    justifyContent: "center",
   },
-  
+
   headerBarProgress: {
     borderRadius: 99,
     backgroundColor: "#F4F4F4",

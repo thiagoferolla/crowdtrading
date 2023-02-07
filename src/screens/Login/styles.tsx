@@ -1,6 +1,14 @@
 import { StyleSheet } from "react-native";
 
 export default StyleSheet.create({
+  headerContainer: {
+    flexDirection: "row",
+    
+    backgroundColor: "#fff",
+    borderBottomWidth: 1,
+    borderBottomColor: "#F4F4F4",
+  },
+
   mainContainer: {
     backgroundColor: "#fff",
     flex: 1,

@@ -14,6 +14,9 @@ import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { MainNavigatorScreens, TabNavigatorScreens } from "../../navigation/types";
 import { useNavigation } from "@react-navigation/native";
 import { BottomTabNavigationProp } from "@react-navigation/bottom-tabs";
+import NaturalIcon from "./mock_icons/natural";
+import WindIcon from "./mock_icons/wind";
+import SolarIcon from "./mock_icons/solar";
 
 interface ChartPoint {
   date: string;
@@ -23,7 +26,7 @@ interface ChartPoint {
 export interface FundCardProps {
   name: string;
   code: string;
-  icon: React.ReactNode;
+  icon: string;
   value: string;
   percentage: string;
   percentageDirection: "up" | "down";
@@ -36,6 +39,12 @@ export default function FundCard(props: FundCardProps) {
 
   const iconColor = props.percentageDirection === "up" ? "#0FDF8F" : "#EE8688";
   const iconRotation = props.percentageDirection === "up" ? "-45deg" : "45deg";
+
+  const icons = {
+    'natural': <NaturalIcon/>,
+    'wind': <WindIcon/>,
+    'solar': <SolarIcon/>
+  }
 
   const CHART_HEIGHT = 70;
   const CHART_WIDTH = 100;
@@ -76,7 +85,7 @@ export default function FundCard(props: FundCardProps) {
     >
       <View style={styles.mainContainer}>
         <View style={{}}>
-          {props.icon}
+          {icons[props.icon]}
           <Text style={styles.fundName}>{props.name}</Text>
         </View>
 

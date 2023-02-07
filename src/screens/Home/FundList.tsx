@@ -1,8 +1,8 @@
 import { View, Text, ScrollView } from "react-native";
 import FundCard, { FundCardProps } from "../../components/FundCard/FundCard";
-import NaturalIcon from "../../store/funds/mock_icons/natural";
-import SolarIcon from "../../store/funds/mock_icons/solar";
-import WindIcon from "../../store/funds/mock_icons/wind";
+import NaturalIcon from "../../components/FundCard/mock_icons/natural";
+import SolarIcon from "../../components/FundCard/mock_icons/solar";
+import WindIcon from "../../components/FundCard/mock_icons/wind";
 import styles from "./styles";
 import { useSelector } from "react-redux";
 import { RootState } from "../../store/configure";
