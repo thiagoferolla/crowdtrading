@@ -37,4 +37,16 @@ export default StyleSheet.create({
     fontSize: 15,
     fontFamily: "Sora_500Medium",
   },
+
+  headerTitle: {
+    fontSize: 17,
+    color: "#000",
+    fontFamily: "Sora_600SemiBold",
+  },
+
+  headerSubtitle: {
+    fontSize: 14,
+    color: "#808080",
+    fontFamily: "Sora_400Regular",
+  },
 });

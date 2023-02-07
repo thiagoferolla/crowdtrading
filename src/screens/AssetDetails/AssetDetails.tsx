@@ -5,7 +5,10 @@ import {
   NativeStackNavigationProp,
   NativeStackScreenProps,
 } from "@react-navigation/native-stack";
-import { MainNavigatorScreens } from "../../navigation/types";
+import {
+  MainNavigatorScreens,
+  TabNavigatorScreens,
+} from "../../navigation/types";
 import Button from "../../components/Button";
 import AssetPrice from "../../components/AssetPrice";
 import FundStats from "../../components/FundStats";
@@ -13,19 +16,17 @@ import Chart from "./Chart";
 import styles from "./styles";
 import PortfolioCredits from "../../components/PortfolioCredits";
 import FundBreakdown from "../../components/FundBreakdown";
+import {
+  BottomTabNavigationProp,
+  BottomTabScreenProps,
+} from "@react-navigation/bottom-tabs";
 
 function AssetDetails() {
-  const {
-    params: { code },
-  } =
-    useRoute<
-      NativeStackScreenProps<MainNavigatorScreens, "AssetDetails">["route"]
-    >();
+  const { params: { code } = {} } =
+    useRoute<BottomTabScreenProps<TabNavigatorScreens, "Trade">["route"]>();
 
   const navigation =
-    useNavigation<
-      NativeStackNavigationProp<MainNavigatorScreens, "AssetDetails">
-    >();
+    useNavigation<BottomTabNavigationProp<TabNavigatorScreens, "Trade">>();
 
   if (!code) {
     navigation.goBack();
