@@ -20,4 +20,21 @@ export default StyleSheet.create({
     marginHorizontal: 33,
     marginBottom: 10,
   },
+
+  chartOptionsContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-around",
+    marginTop: 28,
+  },
+
+  chartOption: {
+    padding: 8,
+    borderRadius: 4,
+  },
+
+  chartOptionText: {
+    fontSize: 15,
+    fontFamily: "Sora_500Medium",
+  },
 });

@@ -10,7 +10,7 @@ export default function FundStats(props: FundStatsProps) {
   const { width } = Dimensions.get("screen");
 
   return (
-    <View style={{ marginVertical: 26, paddingHorizontal: 20 }}>
+    <View style={{ marginTop: 40, marginBottom: 26, paddingHorizontal: 20 }}>
       <Text
         style={{
           fontSize: 17,
