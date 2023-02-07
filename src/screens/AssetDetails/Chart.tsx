@@ -87,7 +87,7 @@ function Chart(props: ChartProps) {
 
   return (
     <View style={{ width: width, height: 280 }}>
-      <Canvas style={{ width: CHART_WIDTH, height: CHART_HEIGHT + 30 }}>
+      <Canvas style={{ width: CHART_WIDTH, height: CHART_HEIGHT + 40 }}>
         <Text
           text={maxY.toLocaleString("en-US", {
             style: "currency",

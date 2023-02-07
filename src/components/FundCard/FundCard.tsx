@@ -11,8 +11,9 @@ import * as d3 from "d3";
 import { useMemo } from "react";
 import styles from "./styles";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
-import { MainNavigatorScreens } from "../../navigation/types";
+import { MainNavigatorScreens, TabNavigatorScreens } from "../../navigation/types";
 import { useNavigation } from "@react-navigation/native";
+import { BottomTabNavigationProp } from "@react-navigation/bottom-tabs";
 
 interface ChartPoint {
   date: string;
@@ -31,7 +32,7 @@ export interface FundCardProps {
 
 export default function FundCard(props: FundCardProps) {
   const navigation =
-    useNavigation<NativeStackNavigationProp<MainNavigatorScreens>>();
+    useNavigation<BottomTabNavigationProp<TabNavigatorScreens>>();
 
   const iconColor = props.percentageDirection === "up" ? "#0FDF8F" : "#EE8688";
   const iconRotation = props.percentageDirection === "up" ? "-45deg" : "45deg";
@@ -71,7 +72,7 @@ export default function FundCard(props: FundCardProps) {
 
   return (
     <Touchable
-      onPress={() => navigation.navigate("AssetDetails", { code: props.code })}
+      onPress={() => navigation.navigate("Trade", { code: props.code })}
     >
       <View style={styles.mainContainer}>
         <View style={{}}>
