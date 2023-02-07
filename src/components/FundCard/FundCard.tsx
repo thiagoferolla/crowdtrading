@@ -92,7 +92,7 @@ export default function FundCard(props: FundCardProps) {
         </View>
 
         <View style={styles.priceContainer}>
-          <Text style={styles.price}>$1,245.23</Text>
+          <Text style={styles.price}>{props.value}</Text>
           <View style={styles.percentageContainer}>
             <Ionicons
               name={"arrow-forward"}
@@ -108,7 +108,7 @@ export default function FundCard(props: FundCardProps) {
                 },
               ]}
             >
-              31.82%
+              {props.percentage}
             </Text>
           </View>
         </View>
