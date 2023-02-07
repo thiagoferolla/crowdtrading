@@ -4,33 +4,40 @@ import { MainNavigatorScreens } from './types';
 
 import TabNavigator from './TabNavigator'
 import SignUp from '../screens/SignUp/SignUp';
-import Login from '../screens/Login/Login';
-import AssetDetails from '../screens/AssetDetails/AssetDetails';
+import Login from "../screens/Login/Login";
 import CustomSignUpHeaderOptions from "../screens/SignUp/Header";
 
+import { useSelector } from "react-redux";
+import { RootState } from "../store/configure";
 
 const Navigator = createNativeStackNavigator<MainNavigatorScreens>();
 
 export default function MainNavigator() {
+  const user = useSelector((state: RootState) => state.user.user);
+
   return (
     <NavigationContainer>
       <Navigator.Navigator>
-        <Navigator.Screen
-          name="Login"
-          component={Login}
-          options={{ headerTitle: "" }}
-        />
-        <Navigator.Screen
-          name="SignUp"
-          component={SignUp}
-          options={(props) => CustomSignUpHeaderOptions(props)}
-        />
-        <Navigator.Screen
-          name="TabNavigator"
-          component={TabNavigator}
-          options={{ headerShown: false }}
-        />
-        <Navigator.Screen name="AssetDetails" component={AssetDetails} />
+        {!user ? (
+          <>
+            <Navigator.Screen
+              name="Login"
+              component={Login}
+              options={{ headerTitle: "" }}
+            />
+            <Navigator.Screen
+              name="SignUp"
+              component={SignUp}
+              options={(props) => CustomSignUpHeaderOptions(props)}
+            />
+          </>
+        ) : (
+          <Navigator.Screen
+            name="TabNavigator"
+            component={TabNavigator}
+            options={{ headerShown: false }}
+          />
+        )}
       </Navigator.Navigator>
     </NavigationContainer>
   );

@@ -1,11 +1,18 @@
 import { NavigationProp, useNavigation } from "@react-navigation/native";
 import { useState } from "react";
-import { View, Text, TouchableWithoutFeedback, ScrollView } from "react-native";
+import {
+  View,
+  Text,
+  TouchableWithoutFeedback,
+  ScrollView,
+  Alert,
+} from "react-native";
 import Button from "../../components/Button";
 import TextInput from "../../components/TextInput";
 import { MainNavigatorScreens } from "../../navigation/types";
 import Checkbox from "expo-checkbox";
 import styles from "./styles";
+import * as yup from "yup";
 
 function SignUp() {
   const navigation = useNavigation<NavigationProp<MainNavigatorScreens>>();
@@ -15,6 +22,29 @@ function SignUp() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [termsAccepted, setTermsAccepted] = useState(false);
+
+  function signUp() {
+    if (
+      termsAccepted &&
+      yup.string().email().validateSync(email) &&
+      yup.string().min(1).required().validateSync(password) &&
+      yup.string().min(1).required().validateSync(firstName) &&
+      yup.string().min(1).required().validateSync(lastName)
+    ) {
+      Alert.alert(
+        "Success",
+        "Your account has been created. Login to continue"
+      );
+      navigation.navigate("Login");
+    } else if (!termsAccepted) {
+      Alert.alert(
+        "Error",
+        "You must accept the terms of service to create an account"
+      );
+    } else {
+      Alert.alert("Error", "The information you provided is invalid");
+    }
+  }
 
   return (
     <ScrollView style={styles.mainContainer}>
@@ -69,10 +99,7 @@ function SignUp() {
         </Text>
       </View>
 
-      <Button
-        title="Create Account"
-        onPress={() => navigation.navigate("TabNavigator")}
-      />
+      <Button title="Create Account" onPress={signUp} />
 
       <TouchableWithoutFeedback onPress={() => navigation.navigate("Login")}>
         <Text style={styles.loginHintText}>

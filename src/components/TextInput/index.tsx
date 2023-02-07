@@ -5,6 +5,7 @@ import {
   Text,
   View,
   TouchableOpacity,
+  TextInputProps as RNTextInputProps,
 } from "react-native";
 import styles from "./styles";
 
@@ -14,6 +15,9 @@ interface TextInputProps {
   value: string;
   onValueChange: (value: string) => void;
   sensitive?: boolean;
+  autoCapitalize?: RNTextInputProps["autoCapitalize"];
+  autoComplete?: RNTextInputProps["autoComplete"];
+  keyboardType?: RNTextInputProps["keyboardType"];
 }
 
 export default function TextInput(props: TextInputProps) {
